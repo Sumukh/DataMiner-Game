@@ -33,5 +33,5 @@ body {
   width: 130px;
   height: 130px;
   border-radius: 65px;
-  background-image: url('./map.png');
+  background-image: url('../map.png');
 }

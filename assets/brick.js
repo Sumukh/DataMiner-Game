@@ -51,8 +51,8 @@ function init_paddle() {
 }
 
 function initbricks() {
-  NROWS = 5;
-  NCOLS = 5;
+  NROWS = 3;
+  NCOLS = 3;
   BRICKWIDTH = (WIDTH/NCOLS) - 1;
   BRICKHEIGHT = 20;
   PADDING = 1;
@@ -149,6 +149,7 @@ function draw(){
   if (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1) {
     dy = -dy;
     bricks[row][col] = 0;
+    incrementBandwith();
   }
   
   
@@ -162,8 +163,9 @@ function draw(){
       dy = -dy;
     else
       //game over, so stop the animation
-
       clearInterval(intervalid);
+      window.reload();
+
   }
  
   x += dx;

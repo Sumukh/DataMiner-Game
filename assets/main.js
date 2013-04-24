@@ -54,7 +54,7 @@ function decrementBandwidth() {
   $("#bandwidth span").html(curBandwidth);
 }
 
-function decrementBandwidth() {
+function incrementBandwith() {
   curBandwidth++;
   $("#bandwidth span").html(curBandwidth);
 }

@@ -200,6 +200,7 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     // connected
             get_friends();
+            init();
   } else if (response.status === 'not_authorized') {
     login();
     //call login. 
@@ -257,7 +258,7 @@ function get_friends(){
 
 }
 $(document).ready(function() {
-FB.getLoginStatus();
+
   });  //BEGIN LIBRARY CODE
 
 </script> 

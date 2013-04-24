@@ -5,14 +5,47 @@ body {
   margin: 0;
 }
 
+#map {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  z-index: 1000;
+}
+
 #header {
   background-color: #222;
+}
+
+#header ul {
+  float: left;
+}
+
+#header ul li {
+  float: left;
+  list-style: none;
+}
+
+#header ul li a {
+  color: #ACD156;
+  padding: 0 10px 0 10px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+
+#header ul li a.selected {
+  color: #FFF;
+}
+
+#header ul li a:hover {
+  color: #444;
 }
 
 #header h1 {
   color: #FFF;
   margin: 0;
   padding: 10px 0 10px 100px;
+  float: left;
 }
 
 #header h1 span {

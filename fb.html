@@ -38,7 +38,8 @@ FB.getLoginStatus(function(response) {
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {
-           // window.location = 'index.html';
+          testAPI();
+           window.location = 'index.html';
         } else {
             // cancelled
         }
@@ -48,14 +49,7 @@ function login() {
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
-    });
-}
-
-function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
+        alert('Good to see you, ' + response.name + '.');
         console.log(response);
     });
 }

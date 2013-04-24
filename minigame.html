@@ -71,7 +71,18 @@ function testAPI() {
         console.log(response);
         store = response;
         $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
+
     });
+function picture() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+        console.log(response);
+        store = response;
+        $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
+        $('.login_link').html(escape(store.name));  
+
+    });
+
 
 
 }
@@ -82,6 +93,7 @@ function get_friends(){
               friends_list.push(friend.name);
             });
             console.log(friends_list);
+            picture();
             init();
 
         } else {
@@ -103,6 +115,8 @@ $(document).ready(function() {
   <ul>
     <li><a id="mine_link" href="index.html" class="selected">MINE</a></li>
     <li><a id="map_link" href="index.html#map">MAP</a></li>
+    <li><a id="login_link" class="login_link" href="#" onclick="login();">LOGIN</a></li>
+
   </ul>
   <div style="clear:both;"></div>
 </div>

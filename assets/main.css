@@ -1,0 +1,37 @@
+body {
+  font-family: "Century Gothic", sans-serif;
+  background-color: #444;
+}
+
+.circle {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  border: 2px solid #FFF;
+  font-size: 2em;
+  text-align: center;
+}
+
+.fb {
+  background-color: #4660A2;
+  color: #FFF;
+  font-weight: bolder;
+  padding: 20px 0 0 0;
+  height: 30px;
+}
+
+.fb_profilepic {
+  background-image: url('https://profile-b.xx.fbcdn.net/hprofile-ash4/371715_1653943990_1694696117_q.jpg');
+}
+
+.berkeley {
+  background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc7/373023_10111634660_526022946_q.jpg');
+}
+
+.map {
+  width: 130px;
+  height: 130px;
+  border-radius: 65px;
+  background-image: url('./map.png');
+}

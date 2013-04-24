@@ -15,9 +15,11 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     // connected
   } else if (response.status === 'not_authorized') {
-        login();
+    //call login. 
   } else {
-        login();
+
+    //call login. 
+     //   
   }
  });
 
@@ -36,7 +38,7 @@ FB.getLoginStatus(function(response) {
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {
-            window.location = 'index.html';
+           // window.location = 'index.html';
         } else {
             // cancelled
         }
@@ -49,4 +51,15 @@ function testAPI() {
         console.log('Good to see you, ' + response.name + '.');
     });
 }
+
+function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+        console.log('Good to see you, ' + response.name + '.');
+        console.log(response);
+    });
+}
 </script>
+
+
+<button onclick="login();"> Login to Facebook </button>

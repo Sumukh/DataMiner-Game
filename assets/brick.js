@@ -101,10 +101,10 @@ function circle(x,y,r) {
   ctx.fill();
 }
 
-function rect(x,y,w,h,text) {
+function rect(x,y,w,h,text,color) {
   ctx.beginPath();
   ctx.rect(x,y,w,h);
-  ctx.fillStyle = '#8ED6FF';
+  ctx.fillStyle = color;
   ctx.closePath();
   ctx.fill();
     ctx.fillStyle = "black";
@@ -128,7 +128,7 @@ function draw(){
     if(paddlex!=0)
     paddlex-=5
     }
-  rect(paddlex, HEIGHT-paddleh, paddlew, paddleh, "");
+  rect(paddlex, HEIGHT-paddleh, paddlew, paddleh, "","#000");
   
   ///draw bricks
   for (i=0; i < NROWS; i++) {
@@ -136,7 +136,7 @@ function draw(){
       if (bricks[i][j] != 0) {
         rect((j * (BRICKWIDTH + PADDING)) + PADDING, 
              (i * (BRICKHEIGHT + PADDING)) + PADDING,
-             BRICKWIDTH, BRICKHEIGHT,bricks_text[i][j]);
+             BRICKWIDTH, BRICKHEIGHT,bricks_text[i][j],"#8ED6FF");
       }
     }
   }

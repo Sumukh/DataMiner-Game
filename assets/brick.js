@@ -12,9 +12,9 @@ var paddlew;
 var intervalid;
 var rightdown=false;
 var leftdown=false;
+var success=false;
 var canvasMinX;
 var canvasMaxX;
-var success=false;
 
 var bricks;
 var NROWS;
@@ -154,21 +154,12 @@ function draw(){
   for (i=0; i < NROWS; i++) {
     for (j=0; j < NCOLS; j++) {
       if (bricks[i][j] != 0) {
-        success = false;
+            success=false;
       }
     }
   }
 
-}
-  if(success) {
-    incrementBandwith();
-    incrementBandwith();
-    incrementBandwith();
-    incrementBandwith();
-    incrementBandwith();
-    window.location = 'index.html';
   }
-  
  
   
   if (x + dx+10 > WIDTH || x + dx-10 < 0)

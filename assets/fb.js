@@ -55,14 +55,14 @@ function testAPI() {
 
 
 }
-var friends = new Array();
 function get_friends(){
+      var friends = new Array();
       FB.api('/me/friends', function(response) {
         if(response.data) {
             $.each(response.data,function(index,friend) {
               friends.push(friend.name);
             });
-            console.log(friends);
+            return friends;
         } else {
             alert("Error!");
         }

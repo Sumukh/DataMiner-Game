@@ -11,9 +11,6 @@
 
   <script> 
 
-function fbfriends() {
-  get_friends();
-}
   window.onload=init;
   //BEGIN LIBRARY CODE
 var x = 150;
@@ -96,7 +93,9 @@ function init_mouse() {
 
 
 function init() {
-  fbfriends();
+  console.log("calling")
+var friends = get_friends(); 
+  console.log("called")
 
   ctx = $('#canvas')[0].getContext("2d");
   WIDTH = $("#canvas").width();

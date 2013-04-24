@@ -58,7 +58,7 @@
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           //Can also set your own HTML here.
-          infowindow.setContent(locations[i][0] + " on 4/"+Math.floor(3+ Math.random() * 10)+" with "+Math.floor(1+ Math.random() * 4) +" friends <br> Loading Minigame ...");
+          infowindow.setContent(locations[i][0] + " on 4/"+Math.floor(3+ Math.random() * 10)+" with "+Math.floor(1+ Math.random() * 4) +" friends <br> <a href='minigame.html'> Go to the minigame. </a> ");
           infowindow.open(map, marker);
           //marker.setAnimation(google.maps.Animation.BOUNCE);
 

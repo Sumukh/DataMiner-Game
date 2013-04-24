@@ -12,7 +12,6 @@ var paddlew;
 var intervalid;
 var rightdown=false;
 var leftdown=false;
-var success=false;
 var canvasMinX;
 var canvasMaxX;
 
@@ -47,7 +46,7 @@ $(document).mousemove(onMouseMove);
 function init_paddle() {
   paddlex = WIDTH / 2;
   paddleh = 10;
-  paddlew = 150;
+  paddlew = 100;
 }
 
 function initbricks() {
@@ -149,16 +148,6 @@ function draw(){
   if (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1) {
     dy = -dy;
     bricks[row][col] = 0;
-    incPoints(5);
-
-  for (i=0; i < NROWS; i++) {
-    for (j=0; j < NCOLS; j++) {
-      if (bricks[i][j] != 0) {
-            success=false;
-      }
-    }
-  }
-
   }
  
   
@@ -171,7 +160,6 @@ function draw(){
     if (x > paddlex && x < paddlex + paddlew)
       dy = -dy;
     else
-      decrementBandwidth();
       //game over, so stop the animation
       clearInterval(intervalid);
   }

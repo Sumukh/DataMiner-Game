@@ -199,7 +199,9 @@ function draw(){
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     // connected
+            get_friends();
   } else if (response.status === 'not_authorized') {
+    login();
     //call login. 
   } else {
 
@@ -221,7 +223,7 @@ FB.getLoginStatus(function(response) {
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {
-          testAPI();
+            get_friends();
            //window.location = 'index.html';
         } else {
             // cancelled
@@ -247,6 +249,7 @@ function get_friends(){
             $.each(response.data,function(index,friend) {
               friends_list.push(friend.name);
             });
+            console.log(friends_list)
         } else {
             alert("Error!");
         }
@@ -254,7 +257,7 @@ function get_friends(){
 
 }
 $(document).ready(function() {
-
+  login()
   get_friends();
   init();
   });  //BEGIN LIBRARY CODE

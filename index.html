@@ -111,13 +111,18 @@ function login() {
         }
     });
 }
+        var store = 1;
 
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-        alert('Good to see you, ' + response.name + '.');
+        alert('Welcome MINER NUMBER' + response.id + '. You also go by ' + response.name + '.');
         console.log(response);
+        store = response;
     });
+
+$('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.username)+"/picture)");  
+
 }
 </script>
   <link href="assets/main.css" rel="stylesheet" type="text/css" />

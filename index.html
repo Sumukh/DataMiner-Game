@@ -116,12 +116,12 @@ function login() {
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-        alert('Welcome MINER NUMBER' + response.id + '. You also go by ' + response.name + '.');
+        alert('Welcome Miner #: ' + response.id + '.\nAccording to our records you also go by ' + response.name + '.');
         console.log(response);
         store = response;
     });
 
-$('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.username)+"/picture)");  
+$('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
 
 }
 </script>

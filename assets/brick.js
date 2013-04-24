@@ -149,7 +149,7 @@ function draw(){
   if (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1) {
     dy = -dy;
     bricks[row][col] = 0;
-    incPoints(2);
+    incPoints(10);
     incrementBandwith();
   }
   
@@ -162,7 +162,7 @@ function draw(){
   else if (y + dy > HEIGHT) {
     if (x > paddlex && x < paddlex + paddlew)
       dy = -dy;
-    else {
+    else
       //game over, so stop the animation
       clearInterval(intervalid);
       for (i=0; i < NROWS; i++) {
@@ -171,11 +171,12 @@ function draw(){
               success=false;
             }
           }
-
         }
-        console.log(success)
-    
-      }  
+      if (success = true) {
+        incrementBandwith();
+      }
+  }
+ 
   x += dx;
   y += dy;
   }

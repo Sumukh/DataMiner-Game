@@ -200,7 +200,7 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     // connected
             get_friends();
-            init();
+            //init(); Call init after it loads
   } else if (response.status === 'not_authorized') {
     login();
     //call login. 
@@ -250,7 +250,9 @@ function get_friends(){
             $.each(response.data,function(index,friend) {
               friends_list.push(friend.name);
             });
-            console.log(friends_list)
+            console.log(friends_list);
+            init();
+
         } else {
             alert("Error!");
         }

@@ -5,6 +5,8 @@
   <title>DataMiner Art 23AC Final Project</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script src="assets/main.js" type="text/javascript"></script>
+    <script src="assets/fb.js" type="text/javascript"></script>
+
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxqrDFtjNJ6yEFqLGGZrf-cvDWFdnVEQY&amp;sensor=false">
 </script>
 
@@ -66,64 +68,7 @@ $(document).ready(function() {
 </script>
 
 <script>
-  // Additional JS functions here
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '331036450352653', // App ID
-      channelUrl : '//www.sumukh.github.io/channel.html', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
 
-    // Additional init code here
-FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    // connected
-  } else if (response.status === 'not_authorized') {
-    //call login. 
-  } else {
-
-    //call login. 
-     //   
-  }
- });
-
-  };
-
-  // Load the SDK Asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "http://connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
-</script>
-<script>
-function login() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-          testAPI();
-           //window.location = 'index.html';
-        } else {
-            // cancelled
-        }
-    });
-}
-        var store = 1;
-
-function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-        alert('Welcome Miner #: ' + response.id + '.\nAccording to our records you also go by ' + response.name + '.');
-        console.log(response);
-        store = response;
-    });
-
-$('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
-
-}
 </script>
   <link href="assets/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -135,7 +80,6 @@ $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+esc
     <li><a id="mine_link" href="#" class="selected">MINE</a></li>
     <li><a id="map_link" href="#">MAP</a></li>
     <li><a id="login_link" href="#" onclick="login();">LOGIN</a></li>
-
   </ul>
   <div style="clear:both;"></div>
 </div>

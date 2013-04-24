@@ -11,6 +11,9 @@
 
   <script> 
 
+function fbfriends() {
+  get_friends();
+}
   window.onload=init;
   //BEGIN LIBRARY CODE
 var x = 150;
@@ -78,7 +81,9 @@ function initbricks() {
     bricks_text[i] = new Array(NCOLS);
     for (j=0; j < NCOLS; j++) {
       bricks[i][j] = 1;
-      bricks_text[i][j] = "Hey there"
+      var rand_friend_id = friends[Math.floor(Math.random()*friends.length)];
+
+      bricks_text[i][j] = rand_friend_id;
 
     }
   }
@@ -91,6 +96,8 @@ function init_mouse() {
 
 
 function init() {
+  fbfriends();
+
   ctx = $('#canvas')[0].getContext("2d");
   WIDTH = $("#canvas").width();
   HEIGHT = $("#canvas").height();
@@ -98,6 +105,7 @@ function init() {
   init_mouse();
   initbricks();
   intervalid= setInterval(draw, 10);
+
   return intervalid;
 }
 
@@ -181,7 +189,6 @@ function draw(){
   }
   
   </script> 
-  </script>
 </head>
 <body>
 

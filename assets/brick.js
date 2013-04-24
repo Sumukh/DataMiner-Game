@@ -158,6 +158,8 @@ function draw(){
       }
     }
   }
+
+}
   if(success) {
     incrementBandwith();
     incrementBandwith();

@@ -162,7 +162,7 @@ function draw(){
   else if (y + dy > HEIGHT) {
     if (x > paddlex && x < paddlex + paddlew)
       dy = -dy;
-    else
+    else {
       //game over, so stop the animation
       clearInterval(intervalid);
       for (i=0; i < NROWS; i++) {
@@ -171,14 +171,11 @@ function draw(){
               success=false;
             }
           }
-          if (success = true) {
-        incrementBandwith();
-        window.history.back()
-      }
-  }
+
         }
+        console.log(success)
     
- 
+      }  
   x += dx;
   y += dy;
   }

@@ -12,6 +12,7 @@ var paddlew;
 var intervalid;
 var rightdown=false;
 var leftdown=false;
+var success=false;
 var canvasMinX;
 var canvasMaxX;
 
@@ -148,6 +149,13 @@ function draw(){
   if (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1) {
     dy = -dy;
     bricks[row][col] = 0;
+  for (i=0; i < NROWS; i++) {
+    for (j=0; j < NCOLS; j++) {
+      if (bricks[i][j] != 0) {
+       success=false;
+      }
+    }
+  }
   }
  
   

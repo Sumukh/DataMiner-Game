@@ -12,7 +12,7 @@
     // Additional init code here
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
-    // connected
+    picture();
   } else if (response.status === 'not_authorized') {
     //call login. 
   } else {
@@ -44,6 +44,16 @@ function login() {
 }
         var store = 1;
 
+function picture() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+        console.log(response);
+        store = response;
+        $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
+    });
+
+
+}
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {

@@ -55,17 +55,3 @@ function testAPI() {
 
 
 }
-function get_friends(){
-      var friends = new Array();
-      FB.api('/me/friends', function(response) {
-        if(response.data) {
-            $.each(response.data,function(index,friend) {
-              friends.push(friend.name);
-            });
-            return friends;
-        } else {
-            alert("Error!");
-        }
-    });
-
-}

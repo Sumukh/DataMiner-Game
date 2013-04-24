@@ -10,9 +10,25 @@
   <script src="assets/main.js"></script>
 
   <script> 
+var friends_list = new Array();
 
-  window.onload=init;
-  //BEGIN LIBRARY CODE
+function get_friends(){
+      FB.api('/me/friends', function(response) {
+        if(response.data) {
+            $.each(response.data,function(index,friend) {
+              friends_list.push(friend.name);
+            });
+        } else {
+            alert("Error!");
+        }
+    });
+
+}
+$(document).ready(function() {
+
+  get_friends();
+  init();
+  });  //BEGIN LIBRARY CODE
 var x = 150;
 var y = 150;
 var dx = 2;
@@ -78,7 +94,7 @@ function initbricks() {
     bricks_text[i] = new Array(NCOLS);
     for (j=0; j < NCOLS; j++) {
       bricks[i][j] = 1;
-      var rand_friend_id = friends[Math.floor(Math.random()*friends.length)];
+      var rand_friend_id = friends_list[Math.floor(Math.random()*friends_list.length)];
 
       bricks_text[i][j] = rand_friend_id;
 
@@ -93,10 +109,6 @@ function init_mouse() {
 
 
 function init() {
-  console.log("calling")
-var friends = get_friends(); 
-  console.log("called")
-
   ctx = $('#canvas')[0].getContext("2d");
   WIDTH = $("#canvas").width();
   HEIGHT = $("#canvas").height();
@@ -104,7 +116,6 @@ var friends = get_friends();
   init_mouse();
   initbricks();
   intervalid= setInterval(draw, 10);
-
   return intervalid;
 }
 

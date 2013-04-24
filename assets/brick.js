@@ -157,7 +157,9 @@ function draw(){
     }
   }
   }
- 
+  if (success){
+    window.location = "index.html";
+  }
   
   if (x + dx+10 > WIDTH || x + dx-10 < 0)
     dx = -dx;

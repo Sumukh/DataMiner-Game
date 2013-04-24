@@ -54,7 +54,7 @@ function initbricks() {
   NROWS = 3;
   NCOLS = 3;
   BRICKWIDTH = (WIDTH/NCOLS) - 1;
-  BRICKHEIGHT = 20;
+  BRICKHEIGHT = (150/NCOLS) - 1;
   PADDING = 1;
 
   bricks = new Array(NROWS);

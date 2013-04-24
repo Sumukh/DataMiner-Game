@@ -149,6 +149,7 @@ function draw(){
   if (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1) {
     dy = -dy;
     bricks[row][col] = 0;
+    incPoints(2);
     incrementBandwith();
   }
   
@@ -164,8 +165,17 @@ function draw(){
     else
       //game over, so stop the animation
       clearInterval(intervalid);
-      window.reload();
-
+      for (i=0; i < NROWS; i++) {
+          for (j=0; j < NCOLS; j++) {
+            if (bricks[i][j] != 0) {
+              success=false;
+            }
+          }
+        }
+      if (success = true) {
+        incrementBandwith();
+window.history.back()
+      }
   }
  
   x += dx;

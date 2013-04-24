@@ -15,7 +15,30 @@ var imageLocations = [
   'https://mw2.google.com/mw-panoramio/photos/small/9686682.jpg',
 ];
 
+
+  function getCookie(name)
+  {
+    var re = new RegExp(name + "=([^;]+)");
+    var value = re.exec(document.cookie);
+    return (value != null) ? unescape(value[1]) : null;
+  }
+
+function setCookie(c_name,c_value,c_expiredays) {
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate()+c_expiredays);
+    document.cookie=c_name+ "=" +escape(c_value)+
+    ((c_expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}
+
+
 var curImage = 0;
+setCookie('bandwidth',5,0);
+setCookie('points',100,0);
+setCookie('gs_cookie','firstme',0);
+
+field1 = getCookie('gs_cookie');
+console.log(field1);
+
 var curBandwidth = 5;
 var curPoints = 100;
 
@@ -24,8 +47,15 @@ for (var i = 0; i < lockLocations.length; i++) {
   lockString = lockString + '<div class="circle lock" style="left: ' + lockLocations[i][0] + 'px; top: ' + lockLocations[i][1] + 'px;"></div>';
 }
 
+
+
 function decrementBandwidth() {
   curBandwidth--;
+  $("#bandwidth span").html(curBandwidth);
+}
+
+function decrementBandwidth() {
+  curBandwidth++;
   $("#bandwidth span").html(curBandwidth);
 }
 

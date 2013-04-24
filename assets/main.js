@@ -32,12 +32,12 @@ function setCookie(c_name,c_value,c_expiredays) {
 
 
 var curImage = 0;
+/*
 setCookie('bandwidth',5,0);
 setCookie('points',100,0);
 setCookie('gs_cookie','firstme',0);
-
-field1 = getCookie('gs_cookie');
-console.log(field1);
+//doesn't work
+*/
 
 var curBandwidth = 5;
 var curPoints = 100;

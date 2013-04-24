@@ -51,8 +51,6 @@ function testAPI() {
         console.log(response);
         store = response;
         $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
-        $('.fbname').content.html(escape(store.id));  
-
     });
 
 

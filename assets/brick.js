@@ -171,9 +171,7 @@ function draw(){
       dy = -dy;
     else
       //game over, so stop the animation
-      incrementBandwith();
-      incrementBandwith();
-      window.location = 'index.html'
+
       clearInterval(intervalid);
   }
  

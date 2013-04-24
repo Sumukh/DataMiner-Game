@@ -74,6 +74,7 @@ function testAPI() {
 
     });
 }
+
 function picture() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
@@ -87,7 +88,6 @@ function picture() {
 }
 
 
-}
 function get_friends(){
       FB.api('/me/friends', function(response) {
         if(response.data) {

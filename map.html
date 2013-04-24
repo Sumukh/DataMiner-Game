@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>
+            DataMiner
+        </title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" type="text/css">
+        <meta name="viewport" content="initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-1.6.1.min.js" type="text/javascript">
+</script>
+        <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js" type="text/javascript">
+</script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxqrDFtjNJ6yEFqLGGZrf-cvDWFdnVEQY&amp;sensor=false">
+</script>
+        <script type="text/javascript">
+    function initialize() {
+        var myLatLng = new google.maps.LatLng(37.875058,-122.260065);
+        var stad = new google.maps.LatLng(37.870688,-122.250946);
+
+        var mapOptions = {
+          center: new google.maps.LatLng(37.871908,-122.258284),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
+          var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        var locations = 
+        [
+        ['Swimming', 37.868842,-122.262039, 7],
+        ['Dorms', 37.867859,-122.255044, 6],
+        ['Soda Hall', 37.875058,-122.260065, 5],
+        ['Stadium', 37.870688,-122.250946, 4],
+        ['LaVals Pizza', 37.875549,-122.26043, 3],
+        ['Bongo', 37.875871,-122.260001, 2],
+        ['Dwinelle', 37.870603,-122.260365, 1]
+        ];
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(37.871908,-122.258284),
+            map: map,
+            draggable:false,
+           animation: google.maps.Animation.DROP,
+            title:"Center"
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {  
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            animation: google.maps.Animation.DROP,
+
+            map: map
+          });
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          //Can also set your own HTML here.
+          infowindow.setContent(locations[i][0] + " on 4/"+Math.floor(3+ Math.random() * 10)+" with "+Math.floor(1+ Math.random() * 4) +" friends <br> Loading Minigame ...");
+          infowindow.open(map, marker);
+          //marker.setAnimation(google.maps.Animation.BOUNCE);
+
+          //LOAD THE MINI GAME HERE.               
+          }
+        })(marker, i));
+
+      }
+    }
+        </script>
+        <style type="text/css">
+.page-map, .ui-content, #map-canvas { width: 100%; height: 100%; padding: 0; }
+        </style>
+    </head>
+    <body onload="initialize()">
+        <div data-role="page" class="page-map">
+            <div data-role="content">
+                <div id="map_canvas" style="width:100%; height:100%"></div>
+            </div>
+        </div>
+    </body>
+</html>

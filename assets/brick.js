@@ -171,12 +171,13 @@ function draw(){
               success=false;
             }
           }
-        }
-      if (success = true) {
+          if (success = true) {
         incrementBandwith();
-window.history.back()
+        window.history.back()
       }
   }
+        }
+    
  
   x += dx;
   y += dy;

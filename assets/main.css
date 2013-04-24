@@ -1,6 +1,43 @@
 body {
   font-family: "Century Gothic", sans-serif;
   background-color: #444;
+  padding: 0;
+  margin: 0;
+}
+
+#header {
+  background-color: #222;
+}
+
+#header h1 {
+  color: #FFF;
+  margin: 0;
+  padding: 10px 0 10px 100px;
+}
+
+#header h1 span {
+  color: #acd156;
+}
+
+#infobox {
+  background-color: #ACD156;
+  padding: 10px;
+  border-radius: 0 0 10px 10px ;
+  width: 200px;
+  margin-left: 10px;
+}
+
+#infobox #points, #infobox #bandwidth {
+  padding: 0; margin: 0;
+  color: #444;
+  text-transform: uppercase;
+}
+
+#infobox #bandwidth {
+  color: #1BA5E0;
+}
+
+#infobox #points .num {
 }
 
 .circle {
@@ -21,12 +58,21 @@ body {
   height: 30px;
 }
 
+.image {
+  background-size: 80px;
+}
+
 .fb_profilepic {
   background-image: url('https://profile-b.xx.fbcdn.net/hprofile-ash4/371715_1653943990_1694696117_q.jpg');
 }
 
 .berkeley {
   background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc7/373023_10111634660_526022946_q.jpg');
+}
+
+.lock {
+  background-image: url('http://icons.iconarchive.com/icons/3dlb/3d/48/lock-icon.png');
+  background-color: #333;
 }
 
 .map {

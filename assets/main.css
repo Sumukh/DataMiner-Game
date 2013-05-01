@@ -100,7 +100,8 @@ body {
 }
 
 .fb_profilepic {
-  background-image: url('https://profile-b.xx.fbcdn.net/hprofile-ash4/371715_1653943990_1694696117_q.jpg');
+  background-image: url('./defaultuser.png');
+  background-size: 50px;
 }
 
 .berkeley {

@@ -41,7 +41,7 @@ function login() {
         } else {
             // cancelled
         }
-    }, {perms:'read_stream,user_about_me,user_photos,friends_about_me,user_likes,user_education_history,user_work_history'});
+    }, {perms:'read_stream,user_about_me,user_photos,friends_about_me,user_likes,user_education_history,user_work_history,user_location'});
 }
         var store = 1;
         var school = 1;

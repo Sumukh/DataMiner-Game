@@ -29,19 +29,19 @@ $(document).ready(function() {
   $('.circle').draggable({ 
     });;
 
-  /*$('.circle').mouseout(function() {
+ $('.fancy').mouseout(function() {
     $(this).animate({
       opacity: 1,
-    }, 500, function() { }
+    }, 200, function() { }
     );
   });
-  $('.circle').mouseover(function() {
+  $('.fancy').mouseover(function() {
     $(this).animate({
       opacity: .50,
-    }, 500, function() { }
+    }, 200, function() { }
     );
   });
- 
+  /*
   $('.circle').click(function() {
     if ($(this).hasClass('lock')) {
       return;
@@ -106,7 +106,7 @@ $(document).ready(function() {
 <body>
 
 <div id="header">
-  <h1><span>data</span>MINER</h1>
+  <a href="#"><h1 class="fancy"><span>data</span>MINER</h1></a>
   <ul>
     <li><a id="mine_link" href="#" class="selected">MINE</a></li>
     <li><a id="map_link" href="#">MAP</a></li>

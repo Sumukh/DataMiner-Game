@@ -26,9 +26,8 @@ $(document).ready(function() {
       $("#map").hide();
     }
   });
-  $('.circle').draggable({ 
-    });;
-
+  $('.circle').draggable({});;
+/*
  $('.fancy').mouseout(function() {
     $(this).animate({
       opacity: 1,
@@ -41,13 +40,13 @@ $(document).ready(function() {
     }, 200, function() { }
     );
   });
-  /*
+  */
   $('.circle').click(function() {
-    if ($(this).hasClass('lock')) {
-      return;
-    }
+    if ($(this).hasClass('map')) {
     $("#map_link").click();
-  });*/
+    }
+    return ;
+  });
 
   $('.lock').click(function() {
     if (curBandwidth != 0) {
@@ -161,11 +160,12 @@ $(document).ready(function() {
 <div id="howtoplay">
   <div class="dialogue" style="display:none">
     <h2>How to Play</h2>
-    <p>Thanks for helping out! I've got to get as many <span style="color: #555;">points</span> as possible,
-    by unlocking all the nodes and winning at <span>map games</span>.</p>
+    <p>Thanks for helping out! I've got to collect as much <span style="color: #555;">data</span> as possible about my target. The best way to mine data is to 
+    unlock all the <span>nodes</span> and visit each one. </p>
     <p>To unlock nodes, I need <span style="color:rgb(27, 165, 224);">bandwidth</span>! When I play games my bandwidth
     recharges so that I can do more mining!</p>
-    <a href="#" class="button">Thanks, I've got it!</a>
+    Click on the map to start. 
+    <a href="#" class="button" onclick="">Let's get started!</a>
   </div>
   <img class="mascot" src="./assets/character.png" alt="Mascot" />
 </div>

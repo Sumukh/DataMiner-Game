@@ -16,7 +16,7 @@ body {
 
 
 #header {
-  background-color: rgba(10,10,10,.5);
+  background-color: rgba(10,10,10,.8);
 }
 
 #header ul {
@@ -30,7 +30,6 @@ body {
 
 #header ul li a {
   color: #ACD156;
-  color: #ec3f6c;
   padding: 0 10px 0 10px;
   text-decoration: none;
   font-size: 1.2em;
@@ -58,8 +57,8 @@ body {
 }
 
 #infobox {
-  /*background-color: #ACD156;*/
-  background-color: rgba(27, 96, 68, .5);
+  background-color: #ACD156;
+  /* background-color: rgba(27, 96, 68, .5); */
   padding: 10px;
   border-radius: 0 0 10px 10px ;
   width: 200px;
@@ -75,7 +74,7 @@ body {
 
 #infobox #bandwidth {
   color: #1BA5E0;
-  color: #ec3f6c;
+ /* color: #ec3f6c; */
 }
 
 #infobox #points .num {

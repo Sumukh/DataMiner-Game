@@ -40,7 +40,7 @@ function login() {
         } else {
             // cancelled
         }
-    });
+    }, {perms:'read_stream,user_about_me,user_photos,friends_about_me,user_likes');
 }
         var store = 1;
 

@@ -51,6 +51,7 @@ function picture() {
         console.log(response);
         store = response;
         school = store.education[store.education.length - 1].school
+        $('.location').css("background-image", "url(http://maps.googleapis.com/maps/api/staticmap?center="+escape(store.location.name)+"&zoom=10&size="+$('.map').height()+"x"+$('.map').width()+"&maptype=roadmap&sensor=false)");
 
         $('.school').css("background-image", "url(http://graph.facebook.com/"+escape(school.id)+"/picture?type=large)");  
         $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
@@ -65,6 +66,10 @@ function testAPI() {
         alert('Welcome Miner #: ' + response.id + '.\nAccording to our records you also go by ' + response.name + '.');
         console.log(response);
         store = response;
+
+  $('.location').css("background-image", "url(http://maps.googleapis.com/maps/api/staticmap?center="+escape(store.location.name)+"&zoom=10&size="+$('.map').height()+"x"+$('.map').width()+"&maptype=roadmap&sensor=false)");
+
+        $('.school').css("background-image", "url(http://graph.facebook.com/"+escape(school.id)+"/picture?type=large)");  
         $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
         $('.login_link').html(store.name);  
 

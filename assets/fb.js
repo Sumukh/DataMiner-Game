@@ -13,6 +13,9 @@
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     picture();
+    getphotos();
+        getposts(); 
+
   } else if (response.status === 'not_authorized') {
     //call login. 
   } else {

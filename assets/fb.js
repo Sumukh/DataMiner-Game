@@ -51,7 +51,7 @@ function picture() {
         console.log(response);
         store = response;
         school = store.education[store.education.length - 1].school
-        $('.location').css("background-image", "url(http://maps.googleapis.com/maps/api/staticmap?center="+escape(store.location.name)+"&zoom=10&size="+$('.location').height()+"x"+$('.location').width()+"&maptype=roadmap&sensor=false)");
+        $('.map').css("background-image", "url(http://maps.googleapis.com/maps/api/staticmap?center="+escape(store.location.name)+"&zoom=10&size="+$('.location').height()+"x"+$('.location').width()+"&maptype=roadmap&sensor=false)");
 
         $('.school').css("background-image", "url(http://graph.facebook.com/"+escape(school.id)+"/picture?type=large)");  
         $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  

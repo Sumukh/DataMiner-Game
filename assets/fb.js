@@ -13,6 +13,9 @@
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     picture();
+    getphotos();
+        getposts(); 
+
   } else if (response.status === 'not_authorized') {
     //call login. 
   } else {
@@ -42,8 +45,6 @@ var photos_url = [];
 
 var photos_with_locations = [];
 var photo_locations = [];
-function get_photos(){
-  var fbid = store.id;
 
 function getphotos(){
  var url = '/me?fields=photos.limit(100).type(tagged).fields(name,name_tags,source,picture,place,icon)';
@@ -54,9 +55,11 @@ function getphotos(){
                       console.log(response.photos.data);
 
                             for(var k in response.photos.data) {
-                                    photos_array.push(response.photos.data[k])
+                              incPoints(1);
+                                    photos_array.push(response.photos.data[k]);
                                     photos_url.push(response.photos.data[k].source);
 if(response.photos.data[k].place){
+  incPoints(1);
 console.log(response.photos.data[k].place);
   photos_with_locations.push(response.photos.data[k].source);
   photo_locations.push([response.photos.data[k].place.location.latitude,response.photos.data[k].place.location.longitude]);
@@ -91,7 +94,7 @@ function getposts(){
                             // calculate total likes
                             for(var k in response.data) {
                                       totalpiecesofdata++;
-
+                              incPoints(1);
                                 c++;
                                 if(response.data[k].from.id == fbid) {
                                     console.log(response.data[k]);
@@ -121,6 +124,7 @@ function login() {
 }
         var store = 1;
         var school = 1;
+
 function picture() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {

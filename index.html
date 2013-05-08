@@ -45,6 +45,14 @@ $(document).ready(function() {
     if ($(this).hasClass('map')) {
     $("#map_link").click();
     }
+
+        else if ($(this).hasClass('lock')) {
+          return ;
+    }
+    else if ($(this).hasClass('friends')) {
+
+    }
+
     return ;
   });
 
@@ -147,7 +155,7 @@ $(document).ready(function() {
 <div class="circle fb_profilepic test" id="pic" style="left: 600px; top: 250px;"></div>
 <div class="circle school test" id="work" style="left: 620px; top: 310px;"></div>
 <div class="circle lock" id='photos' style="left: 320px; top: 150px;"></div>
-<div class="circle lock" id='friends' style="left: 240px; top: 300px;"></div>
+<div class="circle lock friends" id='friends' style="left: 240px; top: 300px;"></div>
 <div class="circle lock" id='data' style="left: 300px; top: 440px;"></div>
 
 

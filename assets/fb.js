@@ -32,6 +32,7 @@ FB.getLoginStatus(function(response) {
      js.src = "http://connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
    }(document));
+
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {
@@ -40,7 +41,7 @@ function login() {
         } else {
             // cancelled
         }
-    }, {perms:'read_stream,user_about_me,user_photos,friends_about_me,user_likes'});
+    }, {scope:'read_stream,user_about_me,user_photos,friends_about_me,user_likes'});
 }
         var store = 1;
 

@@ -33,6 +33,42 @@ FB.getLoginStatus(function(response) {
      ref.parentNode.insertBefore(js, ref);
    }(document));
 
+  var posts = [];
+function getposts(){
+  var fbid = store.id;
+
+                console.time('all posts');
+
+                var url = '/me/feed?limit=500';
+                var finished = false;
+                var c = 0, totalLikes = 0;
+                var timer = setInterval(function () {
+
+                    if(url != '') {
+                        console.log("Checking: " + url);
+                        FB.api(url, function(response) {
+
+                            //console.log("Got " + response.data.length + " items");
+
+                            //c += response.data.length;
+
+                            // calculate total likes
+                            for(var k in response.data) {
+                                c++;
+                                if(response.data[k].from.id == fbid) {
+                                    console.log(response.data[k]);
+                                    posts.push(response.data[k].story)
+                                }
+
+                          }
+                        });
+                        url = '';
+                    } else {
+                         //console.log("Skipped iteration");
+                    }
+                }, 1000);
+}
+
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {

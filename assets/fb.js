@@ -33,7 +33,39 @@ FB.getLoginStatus(function(response) {
      ref.parentNode.insertBefore(js, ref);
    }(document));
 
+  var totalpiecesofdata = 0;
+
   var posts = [];
+
+var photos_array = [];
+var photos_with_locations = [];
+var photo_locations = [];
+function get_photos(){
+  var fbid = store.id;
+
+function getphotos(){
+ var url = '/me?fields=photos.limit(100).type(tagged).fields(name,name_tags,source,picture,place,icon)';
+          
+
+                        console.log("Checking: " + url);
+                        FB.api(url, function(response) {
+                      console.log(response.photos.data);
+
+                            for(var k in response.photos.data) {
+                                    photos_list.push(response.photos.data[k])
+if(response.photos.data[k].place){
+console.log(response.photos.data[k].place);
+  photos_with_locations.push(response.photos.data[k].source);
+  photo_locations.push([response.photos.data[k].place.location.latitude,response.photos.data[k].place.location.longitude]);
+}
+                                    
+
+}
+
+});
+
+                      
+}
 function getposts(){
   var fbid = store.id;
 
@@ -47,13 +79,14 @@ function getposts(){
                     if(url != '') {
                         console.log("Checking: " + url);
                         FB.api(url, function(response) {
-
                             //console.log("Got " + response.data.length + " items");
 
                             //c += response.data.length;
 
                             // calculate total likes
                             for(var k in response.data) {
+                                      totalpiecesofdata++;
+
                                 c++;
                                 if(response.data[k].from.id == fbid) {
                                     console.log(response.data[k]);
@@ -84,6 +117,9 @@ function login() {
 function picture() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
+                            for(var k in response.data) {
+                                      totalpiecesofdata++;
+                                    }
         console.log(response);
         store = response;
         school = store.education[store.education.length - 1].school
@@ -100,6 +136,9 @@ function picture() {
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
+                                  for(var k in response.data) {
+                                      totalpiecesofdata++;
+                                    }
         alert('Welcome Miner #: ' + response.id + '.\nAccording to our records you also go by ' + response.name + '.');
         console.log(response);
         store = response;

@@ -38,6 +38,8 @@ FB.getLoginStatus(function(response) {
   var posts = [];
 
 var photos_array = [];
+var photos_url = [];
+
 var photos_with_locations = [];
 var photo_locations = [];
 function get_photos(){
@@ -52,7 +54,8 @@ function getphotos(){
                       console.log(response.photos.data);
 
                             for(var k in response.photos.data) {
-                                    photos_list.push(response.photos.data[k])
+                                    photos_array.push(response.photos.data[k])
+                                    photos_url.push(response.photos.data[k].source);
 if(response.photos.data[k].place){
 console.log(response.photos.data[k].place);
   photos_with_locations.push(response.photos.data[k].source);

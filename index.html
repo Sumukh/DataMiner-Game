@@ -80,6 +80,11 @@ $(document).ready(function() {
   $("#map").hide();
   $("#bandwidth span").html(curBandwidth);
   $("#points span").html(curPoints);
+
+  getphotos();
+  for (var i = 0; i < 20; i++) {
+    $("#filmstrip").append('<img src="' + photos_url[i] + '" alt="" />');
+  }
 });
 
  jsPlumb.bind("ready", function() {
@@ -145,6 +150,9 @@ $(document).ready(function() {
 <div class="circle lock" id='friends' style="left: 240px; top: 300px;"></div>
 <div class="circle lock" id='data' style="left: 300px; top: 440px;"></div>
 
+
+<div id="filmstrip">
+</div>
 
 <div id="intro">
 

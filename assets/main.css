@@ -85,14 +85,16 @@ body {
   border: 2px solid #FFF;
   font-size: 2em;
   text-align: center;
+  z-index: 3;
 }
 
 .fb {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
   background-color: #4660A2;
   color: #FFF;
   font-weight: bolder;
-  padding: 20px 0 0 0;
-  height: 30px;
 }
 
 .image {

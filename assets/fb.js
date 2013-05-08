@@ -66,6 +66,8 @@ console.log(response.photos.data[k].place);
 
                       
 }
+
+
 function getposts(){
   var fbid = store.id;
 
@@ -101,6 +103,8 @@ function getposts(){
                     }
                 }, 1000);
 }
+
+
 
 function login() {
     FB.login(function(response) {
@@ -147,7 +151,9 @@ function testAPI() {
 
         $('.school').css("background-image", "url(http://graph.facebook.com/"+escape(school.id)+"/picture?type=large)");  
         $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
-        $('.login_link').html(store.name);  
+        $('.login_link').html(store.name); 
+        getphotos();
+        getposts(); 
 
     });
 

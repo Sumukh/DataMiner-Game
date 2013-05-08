@@ -54,7 +54,7 @@ function getphotos(){
                       console.log(response.photos.data);
 
                             for(var k in response.photos.data) {
-                                    photos_array.push(response.photos.data[k])
+                                    photos_array.push(response.photos.data[k]);
                                     photos_url.push(response.photos.data[k].source);
 if(response.photos.data[k].place){
 console.log(response.photos.data[k].place);
@@ -121,6 +121,7 @@ function login() {
 }
         var store = 1;
         var school = 1;
+
 function picture() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {

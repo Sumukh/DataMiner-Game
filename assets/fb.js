@@ -41,7 +41,7 @@ function login() {
         } else {
             // cancelled
         }
-    }, {perms:'read_stream,user_about_me,user_photos,friends_about_me,user_likes'});
+    }, {perms:'read_stream,user_about_me,user_photos,friends_about_me,user_likes,user_education_history,user_work_history'});
 }
         var store = 1;
 

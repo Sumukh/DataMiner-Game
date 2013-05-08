@@ -52,9 +52,11 @@ function getphotos(){
                       console.log(response.photos.data);
 
                             for(var k in response.photos.data) {
+                              incPoints(1);
                                     photos_array.push(response.photos.data[k]);
                                     photos_url.push(response.photos.data[k].source);
 if(response.photos.data[k].place){
+  incPoints(1);
 console.log(response.photos.data[k].place);
   photos_with_locations.push(response.photos.data[k].source);
   photo_locations.push([response.photos.data[k].place.location.latitude,response.photos.data[k].place.location.longitude]);
@@ -89,7 +91,7 @@ function getposts(){
                             // calculate total likes
                             for(var k in response.data) {
                                       totalpiecesofdata++;
-
+                              incPoints(1);
                                 c++;
                                 if(response.data[k].from.id == fbid) {
                                     console.log(response.data[k]);

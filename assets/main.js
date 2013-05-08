@@ -18,7 +18,7 @@ var imageLocations = [
 ];
 
 
-  function getCookie(name)
+/*  function getCookie(name)
   {
     var re = new RegExp(name + "=([^;]+)");
     var value = re.exec(document.cookie);
@@ -30,6 +30,31 @@ function setCookie(c_name,c_value,c_expiredays) {
     exdate.setDate(exdate.getDate()+c_expiredays);
     document.cookie=c_name+ "=" +escape(c_value)+
     ((c_expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}*/
+
+function createCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  createCookie(name,"",-1);
 }
 
 
@@ -44,6 +69,22 @@ setCookie('gs_cookie','firstme',0);
 var curBandwidth = 5;
 var curPoints = 100;
 
+var cBandwidth = readCookie('bandwidth');
+if (cBandwidth) {
+  curBandwidth = parseInt(cBandwidth);
+}
+else {
+  createCookie('bandwidth', curBandwidth, 72);
+}
+
+var cPoints = readCookie('points');
+if (cPoints) {
+  curPoints = parseInt(cPoints);
+}
+else {
+  createCookie('points', curPoints, 72);
+}
+
 var lockString = "";
 /*
 for (var i = 0; i < lockLocations.length; i++) {
@@ -54,16 +95,19 @@ for (var i = 0; i < lockLocations.length; i++) {
 
 function decrementBandwidth() {
   curBandwidth--;
+  createCookie('bandwidth', curBandwidth, 72);
   $("#bandwidth span").html(curBandwidth);
 }
 
 function incrementBandwith() {
   curBandwidth++;
+  createCookie('bandwidth', curBandwidth, 72);
   $("#bandwidth span").html(curBandwidth);
 }
 
 function incPoints(amt) {
   curPoints += amt;
+  createCookie('points', curPoints, 72);
   $("#points span").html(curPoints);
 }
 

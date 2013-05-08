@@ -78,6 +78,8 @@ $(document).ready(function() {
   });
   initialize();
   $("#map").hide();
+  $("#bandwidth span").html(curBandwidth);
+  $("#points span").html(curPoints);
 });
 
  jsPlumb.bind("ready", function() {
@@ -105,7 +107,6 @@ $(document).ready(function() {
             jsPlumb.connect({ source:"window1", target:"data", label:"<p style='background-color:#555; color:white'> Interests </p>"});
 
      });
- 
 </script>
 
 <script>

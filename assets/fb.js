@@ -42,8 +42,6 @@ var photos_url = [];
 
 var photos_with_locations = [];
 var photo_locations = [];
-function get_photos(){
-  var fbid = store.id;
 
 function getphotos(){
  var url = '/me?fields=photos.limit(100).type(tagged).fields(name,name_tags,source,picture,place,icon)';

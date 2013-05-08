@@ -110,8 +110,10 @@ body {
   background-size: 50px;
 }
 
-.berkeley {
-  background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc7/373023_10111634660_526022946_q.jpg');
+.school {
+  background-image: url('http://assets.bizjournals.com/nashville/morning_call/graduation_generic_NSH*304.jpg?v=1');
+    background-size: 100%;
+
 }
 
 .lock {

@@ -44,12 +44,15 @@ function login() {
     }, {perms:'read_stream,user_about_me,user_photos,friends_about_me,user_likes,user_education_history,user_work_history'});
 }
         var store = 1;
-
+        var school = 1;
 function picture() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
         console.log(response);
         store = response;
+        school = store.education[store.education.length - 1].school
+
+        $('.school').css("background-image", "url(http://graph.facebook.com/"+escape(school.id)+"/picture?type=large)");  
         $('.fb_profilepic').css("background-image", "url(http://graph.facebook.com/"+escape(store.id)+"/picture)");  
         $('.login_link').html("Target: "+store.name);  
     });

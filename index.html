@@ -79,6 +79,8 @@ $(document).ready(function() {
   });
   initialize();
   $("#map").hide();
+  $("#bandwidth span").html(curBandwidth);
+  $("#points span").html(curPoints);
 });
 
  jsPlumb.bind("ready", function() {
@@ -106,7 +108,6 @@ $(document).ready(function() {
             jsPlumb.connect({ source:"window1", target:"data" });
 
      });
- 
 </script>
 
 <script>

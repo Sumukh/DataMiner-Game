@@ -30,6 +30,7 @@ body {
 
 #header ul li a {
   color: #ACD156;
+  /*color: #ec3f6c;*/
   padding: 0 10px 0 10px;
   text-decoration: none;
   font-size: 1.2em;
@@ -53,7 +54,7 @@ body {
 
 #header h1 span {
   color: #acd156;
-  color: #ec3f6c;
+  /*color: #ec3f6c;*/
 }
 
 #infobox {

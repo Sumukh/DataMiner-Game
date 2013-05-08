@@ -1,10 +1,89 @@
 body {
   font-family: "Century Gothic", sans-serif;
-  background-image:url('bg.png');
+  background-image:url('bg2.jpg');
   background-size:cover;
   background-color: #444;
   padding: 0;
   margin: 0;
+}
+
+#intro {
+  position: fixed;
+  width: 100%;
+  top: 61px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1,1,1,.9);
+  z-index: 2000;
+  color: #FFF;
+}
+
+#welcome {
+  width: 600px;
+  margin: 200px auto 0 auto;
+}
+
+#welcome h1 span {
+  color: #ACD156;
+}
+
+#welcome img.mascot {
+  height: 200px;
+  padding: 40px 40px 80px 0;
+  float: left;
+}
+
+#welcome p {
+  line-height: 30px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+#welcome p.gray {
+  color: #AAA;
+}
+
+a.button {
+  background-color: #ACD156;
+  display: inline-block;
+  width: 200px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#howtoplay {
+  position: fixed;
+  width: 400px;
+  right: 20px;
+  bottom: 10px;
+}
+
+#howtoplay .mascot {
+  height: 300px;
+}
+
+#howtoplay h1 {
+  color: #ACD156;
+}
+
+#howtoplay .dialogue {
+  background-color: #EEE;
+  border: 2px solid #BBB;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 0 20px 0;
+  font-size: 18px;  
+  font-weight: bolder;
+  line-height: 30px;
+} 
+
+#howtoplay .dialogue span {
+  color: #ACD156;
 }
 
 #map {

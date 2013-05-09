@@ -174,8 +174,8 @@ function draw(){
         }
       if (success = true) {
         incrementBandwith();
+        history.go(-1);
       }
-    history.go(-1);
   }
  
   x += dx;
